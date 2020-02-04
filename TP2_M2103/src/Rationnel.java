@@ -3,7 +3,7 @@ public class Rationnel {
 	private long numerateur;
 	private long denominateur;
 	
-	private static long pgcd (long a, long b) {
+	public static long pgcd (long a, long b) {
 		while (a!=b) {
 			if(a>b) {
 				a-=b;
@@ -31,10 +31,11 @@ public class Rationnel {
 		return this.denominateur;
 	}
 	
-	public void reduction () {
+	public Rationnel reduction () {
 		long p=Rationnel.pgcd (this.numerateur, this.denominateur);
-		this.numerateur/=p;
-		this.denominateur/=p;
+		return new Rationnel(
+				this.numerateur/p,
+				this.denominateur/p);
 	}
 	
 	public Rationnel somme (Rationnel r) {
@@ -50,8 +51,8 @@ public class Rationnel {
 	}
 	
 	public String toString() {
-		this.reduction();
-		return this.numerateur + "/" + this.denominateur;
+		Rationnel r=this.reduction();
+		return r.numerateur + "/" + r.denominateur;
 	}
 }
 

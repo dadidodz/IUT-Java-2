@@ -7,8 +7,8 @@ public class RationnelTest {
     @Test
     public void testConstructeur() {
         Rationnel r = new Rationnel(1, 2);
-        assertEquals(1, r.getNumérateur());
-        assertEquals(2, r.getDénominateur());
+        assertEquals(1, r.getNumerateur());
+        assertEquals(2, r.getDenominateur());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -28,23 +28,23 @@ public class RationnelTest {
 
     @Test
     public void testReduction() {
-        Rationnel r = new Rationnel(15, 10).réduction();
-        assertEquals(3, r.getNumérateur());
-        assertEquals(2, r.getDénominateur());
+        Rationnel r = new Rationnel(15, 10).reduction();
+        assertEquals(3, r.getNumerateur());
+        assertEquals(2, r.getDenominateur());
     }
 
     @Test
     public void testSomme() {
         Rationnel s = new Rationnel(3, 5).somme(new Rationnel(2, 10));
-        assertEquals(40, s.getNumérateur());
-        assertEquals(50, s.getDénominateur());
+        assertEquals(40, s.getNumerateur());
+        assertEquals(50, s.getDenominateur());
     }
 
     @Test
     public void testProduit() {
         Rationnel p = new Rationnel(3, 5).produit(new Rationnel(2, 10));
-        assertEquals(6, p.getNumérateur());
-        assertEquals(50, p.getDénominateur());
+        assertEquals(6, p.getNumerateur());
+        assertEquals(50, p.getDenominateur());
     }
 
     @Test
