@@ -48,5 +48,10 @@ public class Rationnel {
 				this.numerateur*r.numerateur,
 				r.denominateur*this.denominateur);
 	}
+	
+	public String toString() {
+		this.reduction();
+		return this.numerateur + "/" + this.denominateur;
+	}
 }
 
