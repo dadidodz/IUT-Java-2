@@ -10,8 +10,6 @@ public class CalculValeurApprochée {
 			r = unDemi.produit(r.somme(v));
 		}
 		System.out.println("Valeur approchée de racine carrée de " + a +" = " + r);
-
-
 	}
 
 }
