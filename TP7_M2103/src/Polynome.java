@@ -106,6 +106,41 @@ public class Polynome {
         }
     	return résultat;
     }
+    
+    /**
+     * calcule le degré d'un polynôme
+     * 
+     * @return degré du polynôme
+     */
+    public int degré() throws ArithmeticException {
+    	for (int n=0; n<=this.coefficients.length && this.getMonome(n).estNul(); n++) {
+    		if (n==this.coefficients.length) {
+    			throw new ArithmeticException ("Polynôme nul");
+    		}
+    	}
+    	int résultat = 0;
+    	for(int i = 0; i < this.coefficients.length; i++) {
+    		 if (!this.getMonome(i).estNul()) {
+    			 résultat = this.getMonome(i).getExposant();
+    		 }
+    	 }
+    	 return résultat;
+    }
+    
+    /**
+     * 
+     * @param p
+     * @return
+     */
+    public Polynome différence(Polynome p) {
+    	Polynome résultat = new Polynome();
+    	for (int i = 0; i < this.coefficients.length; i++) {
+    		if (this.getMonome(i).getExposant()==p.getMonome(i).getExposant()) {
+    			résultat.setMonome(this.getMonome(i).somme(new Monome (-p.getMonome(i).getCoefficient(),i)));
+    		}
+    	}
+    	return résultat;
+    }
 
     @Override
     public String toString() {

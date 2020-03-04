@@ -74,4 +74,27 @@ public class TestPolynome {
         assertEquals("256.0xe9 + 320.0xe5 - 64.0xe3 + 2.0x",
                 p.produit(m).toString());
     }
+    
+    @Test
+    public void testDegré() {
+    	Polynome p = new Polynome();
+    	p.setMonome(new Monome(15F,5));
+    	p.setMonome(new Monome(13F,3));
+    	p.setMonome(new Monome(4F,2));
+    	p.setMonome(new Monome(10F,0));
+    	assertEquals(5, p.degré());
+    }
+    
+    @Test
+    public void testDifférence() {
+    	Polynome p1 = new Polynome();
+    	p1.setMonome(new Monome(20F,3));
+    	p1.setMonome(new Monome(5F,2));
+    	p1.setMonome(new Monome(17F,1));;
+    	Polynome p2 = new Polynome();
+    	p2.setMonome(new Monome(10F,3));
+    	p2.setMonome(new Monome(2F,2));
+    	assertEquals("10.0xe3 + 3.0xe2 + 17.0x",
+    			p1.différence(p2).toString());
+    }
 }
