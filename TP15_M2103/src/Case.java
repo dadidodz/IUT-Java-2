@@ -9,7 +9,11 @@ public abstract class Case {
 		}
 		this.numéro = numéro;
 	}
-
+	
+	protected int getNuméro() {
+		return this.numéro;
+	}
+	
 	public abstract int calculDéplacement(int valeur);
 	
 	@Override

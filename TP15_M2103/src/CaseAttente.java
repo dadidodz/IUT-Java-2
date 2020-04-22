@@ -18,6 +18,6 @@ public class CaseAttente extends Case{
 
 	@Override
 	public String toString() {
-		return (super.toString() + "avancer de la valeur du dé si elle est égale à" + this.valeurAttendue);
+		return (super.toString() + "avancer de la valeur du dé si elle est égale à " + this.valeurAttendue);
 	}
 }
